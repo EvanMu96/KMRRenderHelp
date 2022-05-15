@@ -1,4 +1,4 @@
-#include "RenderHelp.h"
+#include "../RenderHelp/RenderHelp.h"
 
 int main() {
 	// 初始化渲染器和帧缓存大小

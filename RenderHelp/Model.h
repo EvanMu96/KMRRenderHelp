@@ -6,8 +6,17 @@
 // Last Modified: 2020/08/11 19:22:13
 //
 //=====================================================================
-#ifndef _MODEL_H_
-#define _MODEL_H_
+
+//=====================================================================
+//
+// Model.h - 该文件改写自 tinyrender 的 model.h
+//
+//=====================================================================
+
+#pragma once
+#define _CRT_SECURE_NO_WARNINGS 1 
+#define _WINSOCK_DEPRECATED_NO_WARNINGS 1 
+
 
 #include <fstream>
 #include <sstream>
@@ -136,7 +145,4 @@ protected:
 	Bitmap *_normalmap;
 	Bitmap *_specularmap;
 };
-
-
-#endif
 

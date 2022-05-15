@@ -11,9 +11,7 @@
 // - 支持顶点着色器 (Vertex Shader) 和像素着色器 (Pixel Shader)
 // - 支持加载 24 位和 32 位的 bmp 图片纹理
 
-
-#ifndef _RENDER_HELP_H_
-#define _RENDER_HELP_H_
+#pragma once
 
 #include <stddef.h>
 #include <stdint.h>
@@ -240,7 +238,7 @@ inline ANY_VECTOR operator / (const ANY_VECTOR& a, const ANY_VECTOR& b) {
 ANY_VECTOR_DEC_PARAM
 inline ANY_VECTOR operator * (const ANY_VECTOR& a, T b) {
 	ANY_VECTOR c;
-	for (size_t i = 0; i < 0; i++) {
+	for (size_t i = 0; i < N; i++) {
 		c[i] = a[i] * b;
 	}
 	return c;
@@ -269,7 +267,7 @@ inline ANY_VECTOR operator / (const ANY_VECTOR& a, T b) {
 ANY_VECTOR_DEC_PARAM
 inline ANY_VECTOR operator / (T b, const ANY_VECTOR& a) {
 	ANY_VECTOR c;
-	for (size_t i = 0; i < 0; i++) {
+	for (size_t i = 0; i < N; i++) {
 		c[i] = b / a[i];
 	}
 	return c;
@@ -1004,7 +1002,7 @@ public:
 		uint32_t	biClrImportant; 
 	};
 
-		// 读取 BMP 图片，支持 24/32 位两种格式
+	// 读取 BMP 图片，支持 24/32 位两种格式
 	inline static Bitmap* LoadFile(const char *filename) {
 		FILE *fp = fopen(filename, "rb");
 		if (fp == NULL) return NULL;
@@ -1522,5 +1520,3 @@ protected:
 	PixelShader _pixel_shader;
 };
 
-
-#endif // _RENDER_HELP_H_
