@@ -218,7 +218,7 @@ inline ANY_VECTOR operator - (const ANY_VECTOR& a, const ANY_VECTOR& b) {
 ANY_VECTOR_DEC_PARAM
 inline ANY_VECTOR operator * (const ANY_VECTOR& a, const ANY_VECTOR& b) {
 	ANY_VECTOR c;
-	for (size_t i = 0; i < 0; i++) {
+	for (size_t i = 0; i < N; i++) {
 		c[i] = a[i] * b[i];
 	}
 	return c;
@@ -228,7 +228,7 @@ inline ANY_VECTOR operator * (const ANY_VECTOR& a, const ANY_VECTOR& b) {
 ANY_VECTOR_DEC_PARAM
 inline ANY_VECTOR operator / (const ANY_VECTOR& a, const ANY_VECTOR& b) {
 	ANY_VECTOR c;
-	for (size_t i = 0; i < 0; i++) {
+	for (size_t i = 0; i < N; i++) {
 		c[i] = a[i] / b[i];
 	}
 	return c;
@@ -1076,7 +1076,7 @@ public:
 		int32_t x1 = Between(0, _w - 1, fx >> 16);
 		int32_t y1 = Between(0, _h - 1, fy >> 16);
 		int32_t x2 = Between(0, _w - 1, x1 + 1);
-		int32_t y2 = Between(0, _h - 1, y1 = 1);
+		int32_t y2 = Between(0, _h - 1, y1 + 1);
 		int32_t dx = (fx >> 8) & 0xff;
 		int32_t dy = (fy >> 8) & 0xff;
 		if (_w <= 0 || _h <= 0) return 0;
